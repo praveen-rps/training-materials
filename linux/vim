@@ -1,0 +1,107 @@
+                            VIM EDITOR   
+                           ============                       
+VIM(vi improved) is a powerful text editor , The vim editor supports sophisticated text manipulations which are very useful for system administration. If you are familiar with the vi utility, you will find that vim includes vi features, plus many other features.
+
+
+
+VIM editor has three modes of operations.
+  1.Command Mode
+  2.Insert Mode
+  3.Ex Mode(Extended Command Mode)
+
+COMMAND MODE:
+============
+After opening the vim editor, you begin in command mode. The basic operations we can perform in command mode are like , copy, paste,delete, undo ,redo,search, replace , to go to 1st line and end line of the file etc.
+
+  dd         --> Deletes a line
+  ndd        --> Deletes 'n' lines
+  yy         --> copies a line
+  nyy        --> Copies 'n'  lines
+  p          --> pastes the copied or deleted text
+  u          --> Undo ( you can undo  1000 times)
+ ctrl+r      --> Redo
+ G           --> Moves the cursor to the last line of the file
+ gg          --> Moves the cursor to the begining line of the file
+	 shift+zz      --> to save and quit the file  ( this will not work in case of forcefull close)
+/<word>       -->  to search any word
+
+( press n for next match and N for previous match)
+
+
+#vim  +/http  /etc/services     --> to search for “http” word directly from bash prompt. 
+
+5yw      --> to copy 5 words
+5cw      --> to cut 5 words
+5dw      --> to delete 5 words
+
+crtl+v   --> visual mode
+
+  k
+h   l
+  j 
+
+h  --> to move left side one character
+l  --> to move right side one character
+k  --> to move cursor above the character
+j  --> to move the cursor below the character    --> in AIX  arrows will not suppoted 
+
+INSERT MODE:
+===========
+In insert mode you can begin entering text by pressing (i,I,a,A,o,O) any one. You can use arrow keys to move the cursor in vim while remaining in insert  mode. Press ESC key to leave insert and return to command mode.
+
+i    --> Inserts the text before the current cursor position
+I    --> Inserts the text in begining of a line
+a    --> Adds the text after the current cursor position
+A    --> Adds the text at the end of a line
+o    --> Inserts the text one line below current cursor position
+O    --> Inserts the text one line above current cursor position.
+
+Ex Mode:
+========
+From command mode , press a : character to go into ex mode and the cursor moves to the bottom of the screen. 
+
+:q       -->   Quit without saving
+:q!      -->   Quit forcefully without saving
+:w       -->   write (save)
+:wq      -->   save and quit
+:wq!     -->  save and quit forcefully
+
+:se nu   (or) set nu  -->  sets line numbers
+
+:se nu  (or) set nonu -->  to remove the line number from vim editor
+
+:84      --> the cursor goes to line 84
+
+:set key=<passwd>     ---> to encrypt the file
+:set key= enter            ---> to decrypt the file
+
+:%s/bin/bash/         ---> We want to search for all “bin” words  in the entire file and replace them with bash
+    
+        
+:%s/bin/bash/gi    here g means --> globally,  I for --> case-insensitive.
+
+:45s/bin/bash        ---> "bin" will be replaced with "bash" in 45th line
+:45,48s/bin/bash     ---> in 45th to 48th lines "bin" will be replaced with "bash"
+:w   filename  --> original file will be saved as the given filename , like save as option.
+
+:2,15w  test.txt  --> creates a new file with the name "test.txt" with the text of 2-15 lines
+
+:x               --> to save and quit the file in EX-mode
+:X                --> to encrypt the file in EX-mode
+
+:11,15d          --> to delete 11th line to 15th lines
+:.,13            --> deteles from current/present cursor line to 13th lines.
+
+#vim -o /etc/fstab  /etc/group  ( to open multiple files horizontally)
+#vim -O /etc/fstab  /etc/group  ( to open multiple files virtically )
+
+# vim /etc/passwd ( ctrl+w+s to create one more copy of a file in horizontally )
+#                 ( ctrl+w+v                                           vertically   )
+
+NOTE: ctrl+shift+ww  --> to switch in between the two files
+
+
+
+        
+
+
