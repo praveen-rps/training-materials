@@ -1,0 +1,98 @@
+<html>
+	
+	<head>
+		<style>
+
+			.login-container{
+				background-color: #e8dfdd ;
+				padding: 40px;
+				box-shadow: 0 4px 8px rbga(0,0,0,0.1);
+				width: 600px;
+				text-align: center;
+
+			}
+			.input-field{
+				width: 80%
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+
+			}
+			.login-button{
+				width: 100px;
+				padding: 10px;
+				background-color: #4cafff;
+				color: white;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<div class="login-container" align='center'>
+		<h2>Employee Registration </h2>
+		<form action="register" >
+			<table border=1 align=center>
+			<tr> 
+			<td><label for="name">User Name </label></td>
+			<td><input class="input-field" type="text" name="name" required  placeholder="name is required here" pattern="[A-Za-z0-9]{5,15}" /></td>
+			</tr>
+			<tr> 
+			<td><label for="passwd">Password </label></td>
+			<td><input class="input-field" type="password" name="passswd" required pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$#&])[A-Za-z\d$#&@]{8,20}" placeholder="Password is required"/></td>
+			</tr>
+
+			<tr> 
+			<td><label for="email">Email</label></td>
+			<td><input class="input-field" type="email" name="email" required  /></td>
+			<tr> 
+			<td><label for="tel">Telephone</label></td>
+			<td><input class="input-field" type="text" name="tel" required  pattern="\d{10}" /></td>
+
+			</tr>
+
+			<tr>
+			<td><label for="city">City</label></td>
+			<td><input class="input-field" type="text" name="city" /></td>
+			</tr>
+
+			<tr>
+
+			<td><label for="qualification">qualification</label></td>
+			<td><select id="qualification" name="qualification">
+				<option value="btech">B.Tech </option>
+				<option value="mtech">M.Tech</option>
+				<option value="MBA">MBA</option>
+			</select></td>
+			</tr>
+			<tr>
+			<td> <label for="role">Role</label> </td>
+			<td><input class="input-field" type="text" name="role" /></td>
+			</tr>
+			
+			<tr>
+				<td>Proficienty</td>
+				<td> Java <input type="checkbox" name="prof">	
+				DevOps <input type="checkbox" name="prof">
+				Angular <input type="checkbox" name="prof"></td>
+
+			</tr>
+			<tr>		
+				<td>Gender</td>
+				<td>
+				<input type="radio" name="gender" value="male"> Male
+				<input type="radio" name="gender" value="female"> Female <input type="radio" name="gender" value="others">Others
+
+				</td>
+			</tr>
+			</table>
+			<button type="submit" class="login-button"> Register </button>
+
+		
+		</form>
+		</div>
+</html>
